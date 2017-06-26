@@ -44,7 +44,7 @@ export function VislibVisTypeProvider(Private) {
     }
 
     destroy() {
-      if (this.vislibVis) {
+      if (this.vis.vislibVis) {
         this.vis.vislibVis.off('brush', this.vis.API.events.brush);
         this.vis.vislibVis.off('click', this.vis.API.events.filter);
         this.vis.vislibVis.destroy();
