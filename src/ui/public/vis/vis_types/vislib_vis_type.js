@@ -21,6 +21,8 @@ export function VislibVisTypeProvider(Private) {
     }
 
     render(esResponse) {
+      if (!esResponse) return;
+      this._response = esResponse;
       if (this.vis.vislibVis) {
         this.destroy();
       } else {
@@ -38,7 +40,7 @@ export function VislibVisTypeProvider(Private) {
     }
 
     resize() {
-      return;
+      this.render(this._response);
     }
 
     destroy() {
