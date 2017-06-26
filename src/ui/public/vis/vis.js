@@ -52,7 +52,10 @@ export function VisProvider(Private, indexPatterns, timefilter, getAppState) {
           filter: (event) => {
             const appState = getAppState();
             filterBarClickHandler(appState)(event);
-          }, brush: brushEvent(visState),
+          }, brush: (event) => {
+            const appState = getAppState();
+            brushEvent(appState)(event);
+          }
         }
       };
     }
